@@ -1,7 +1,6 @@
 package com.panda.tomcat0314;
 
 import java.sql.*;
-import java.util.Date;
 
 /**
  * @author panda
@@ -16,10 +15,10 @@ public class Test {
 //            Class.forName("com.mysql.cj.jdbc.Driver");
 
             //获取连接地址,并处理中文乱码
-            String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8";
+            String url = "jdbc:mysql://8.129.209.12:3306/panda_test?useUnicode=true&characterEncoding=UTF-8";
             //用户信息
-            String usr = "root";
-            String password = "panyuwen";
+            String usr = "panda";//
+            String password = "P@nda2877";//
             //新建connection连接
             Connection connection = DriverManager.getConnection(url,usr,password);
             //获取statement并执行语句
