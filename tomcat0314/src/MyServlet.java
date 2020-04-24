@@ -6,11 +6,11 @@ import java.io.IOException;
  * @description
  * @date 2020/4/23
  */
-@javax.servlet.annotation.WebServlet("/MyServlet")
+@javax.servlet.annotation.WebServlet(value = "/MyServlet",loadOnStartup = 1)
 public class MyServlet implements Servlet {
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
-
+        System.out.println("init MyServlet");
     }
 
     @Override
