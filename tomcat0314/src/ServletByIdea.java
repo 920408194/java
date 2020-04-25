@@ -41,9 +41,15 @@ public class ServletByIdea extends HttpServlet {
         String url = servletContext.getInitParameter("url");
         response.getWriter().write(url+"\n");
 
-        //读取文件/图片
-        String path = "/WEB-INF/classes/img/xxx.jpg";
-        InputStream inputStream = servletContext.getResourceAsStream(path);
-        response.getWriter().write(inputStream+"\n");
+        //从src包目录读取文件/图片
+        String path1 = "/WEB-INF/classes/img/xxx.jpg";
+        InputStream inputStream1 = servletContext.getResourceAsStream(path1);
+        response.getWriter().write(inputStream1+"\n");
+        //从web目录读取文件/图片
+        InputStream inputStream2 = servletContext.getResourceAsStream("xxx.jpg");
+        response.getWriter().write(inputStream2+"\n");
+        //通过类装载器读取资源文件。
+        InputStream inputStream3 = servletContext.getResourceAsStream("xxx.jpg");
+        response.getWriter().write(inputStream3+"\n");
     }
 }
